@@ -7,12 +7,12 @@ export default class Products extends Component {
             <div className="col-md-4" key={product.id}>
                 <div className="thumbnail text-center">
                     <a href={`#${product.id}`}onClick={(e)=>this.props.handleAddToCart(e, product)}>
-                        <img src={`products/${product.sku}_2.jpg`} alt={product.name} />
+                           <img src={`${product.img_url}`} alt={product.name}  height="150" width="200"/>
                         <p>{product.name}</p>                        
                     </a>
                     <b>{util.formatCurrency(product.price)}</b>
                     <b>{product.discount}</b>
-                    <button className="btn btn-primary" onClick={(e)=>this.props.handleAddToCart(e, product)}>Add to cart</button>
+                    <button className="btn btn-primary" style={{paddingBottom:20}} onClick={(e)=>this.props.handleAddToCart(e, product)}>Add to cart</button>
                 </div>
             </div>
         ));
